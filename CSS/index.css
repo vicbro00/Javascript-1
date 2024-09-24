@@ -85,9 +85,40 @@ a.womens-button {
   grid-template-columns: auto auto;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+  justify-items: center;
+}
+
+.container img {
+  margin: 1em 0;
+  background-color: grey;
+  padding: 2em;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+}
+
 /* Media screens for desktop */
-@media (min-width: 1401px) {
-  
+@media (min-width: 1280px) {
   .browse-item img {
     max-height: 25em;
     margin: 0 6em;
@@ -122,10 +153,15 @@ a.womens-button {
   .womens-collection h2 {
     margin-left: 5%;
   }
+
+  .products img {
+    min-height: 20em;
+    min-width: 16em;
+  }
 }
 
 /* Media screens for mobile */
-@media (min-width: 370px) and (max-width: 699px) {
+@media (min-width: 375px) {
   
   body {
     margin: 0;
@@ -159,10 +195,15 @@ a.womens-button {
     flex-direction: column;
     align-items: center;
   }
+
+  .products img {
+    max-width: 9em;
+    max-height: 9em;
+  }
 }
 
 /* Media screens for tablet */
-@media (min-width: 700px) and (max-width: 1390px) {
+@media (min-width: 767px) {
 
   body {
     margin: 0;

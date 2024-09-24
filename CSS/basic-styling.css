@@ -15,7 +15,7 @@
 :root {
   font-family: "open sans", sans-serif, verdana;
   font-size: 62.5%;
-  margin: 0 5em;
+  margin: 0;
 }
 
 a {
@@ -32,17 +32,19 @@ h1 {
   color: rgb(10, 54, 65);
 }
 
-
-/* Media screens for mobile */
-@media (min-width: 370px) and (max-width: 699px) {
+/* Media screens for desktop */
+@media (min-width: 1280px) {
   :root {
-    margin: 0;
+    margin: 0 5em;
   }
 }
 
+/* Media screens for mobile */
+@media (min-width: 375px) {
+  
+}
+
 /* Media screens for tablet */
-@media (min-width: 700px) and (max-width: 1390px) {
-  :root {
-    margin: 0;
-  }
+@media (min-width: 767px) {
+  
 }

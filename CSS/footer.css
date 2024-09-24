@@ -35,14 +35,14 @@ footer i {
 }
 
 /* Media screens for desktop */
-@media (min-width: 1401px) {
+@media (min-width: 1280px) {
   footer img {
     max-width: 20em;
   }
 }
 
 /* Media screen for mobile devices */
-@media (min-width: 370px) and (max-width: 699px) {
+@media (min-width: 375px) {
   body {
     margin: 0;
    }
@@ -63,7 +63,7 @@ footer i {
 }
 
 /*Media screen for tablet devices */
-@media (min-width: 700px) and (max-width: 1390px) {
+@media (min-width: 767px) {
   body {
     margin: 0;
    }

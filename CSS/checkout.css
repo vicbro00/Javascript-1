@@ -167,7 +167,7 @@ input[type=checkbox] {
 }
 
 /* Media screens for desktop */
-@media (min-width: 1401px) {
+@media (min-width: 1280px) {
   a.button,
   button {
     font-size: 1em;
@@ -185,7 +185,7 @@ input[type=checkbox] {
 }
 
 /* Media screens for mobile */
-@media (min-width: 370px) and (max-width: 699px) {
+@media (min-width: 375px) {
   p,
   h3,
   h4 {
@@ -245,7 +245,7 @@ input[type=checkbox] {
 }
 
 /* Media screens for tablet */
-@media (min-width: 700px) and (max-width: 1390px) {
+@media (min-width: 767px) {
   p,
   h3,
   h4 {

@@ -43,7 +43,7 @@ a.button{
 }
 
 /* Media screens for desktop */
-@media (min-width: 1401px) {
+@media (min-width: 1280px) {
   a.button {
     font-size: 1em;
   }
@@ -67,7 +67,7 @@ a.button{
 }
 
 /* Media screens for mobile */
-@media (min-width: 370px) and (max-width: 699px) {
+@media (min-width: 375px) {
   main h1 {
     font-size: 20px;
   }
@@ -90,7 +90,7 @@ a.button{
 }
 
 /* Media screens for tablet */
-@media (min-width: 700px) and (max-width: 1390px) {
+@media (min-width: 767px) {
   main h1 {
     font-size: 20px;
   }
