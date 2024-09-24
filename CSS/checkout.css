@@ -1,0 +1,287 @@
+/*Body Styling*/
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  color: black;
+}
+
+main h1 {
+  display: inline-block;
+}
+
+a.button,
+button {
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+}
+
+a.button {
+  display: flex;
+  margin: 4em auto;
+  justify-content: center;
+  width: 8em;
+}
+
+.bar {
+  width: 100%;
+  height: .1em;
+  background-color: rgb(10, 54, 65);
+  margin: 1em 0;
+}
+
+.under-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.order-details,
+.methods {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 2.5%;
+}
+
+.cost-and-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Top part styling*/
+main img {
+  object-fit: contain;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1em;
+  max-width: 100%;
+  margin-left: 1em;
+}
+
+main h2 {
+  text-align: center;
+}
+
+main h3 {
+  display: inline-block;
+}
+
+.top img {
+  justify-self: center;
+  margin-top: 2em;
+}
+
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product {
+  background-color: rgb(10, 54, 65, 10%);
+}
+
+.product-info {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  margin: auto;
+}
+
+.jacket,
+.cost {
+  display: inline-block;
+  text-align: center;
+}
+
+.sum {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  text-align: left;
+  justify-content: right;
+}
+
+.sum-right, 
+.sum-left {
+  display: grid;
+  justify-content: right;
+}
+
+.form-item1,
+.form-item2,
+.form-item3,
+.form-item4,
+.form-item5 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Personal details styling*/
+fieldset {
+  background-color: rgb(10, 54, 65, 10%);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+}
+
+fieldset label, input {
+  margin: .5em;
+}
+
+/*Bottom Styling*/
+input[type=checkbox] {
+  line-height: normal;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.shipping,
+.forms2 {
+  background-color: rgb(10, 54, 65, 10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.bottom label {
+  width: 6em;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+}
+
+/* Media screens for desktop */
+@media (min-width: 1401px) {
+  a.button,
+  button {
+    font-size: 1em;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+
+  .shipping .fa-solid,
+  .forms2 .fa-brands {
+    width: 5em;
+    text-align: center;
+  }
+}
+
+/* Media screens for mobile */
+@media (min-width: 370px) and (max-width: 699px) {
+  p,
+  h3,
+  h4 {
+    margin-left: 1em;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .jacket {
+    margin: 0.5em auto;
+  }
+
+  .cost-and-button {
+    margin-right: 0.5em;
+  }
+
+  .product-info {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .product-info a.button {
+    margin: 0.5em auto;
+  }
+
+  .top {
+    display: inline;
+  }
+
+  .sum-left,
+  .sum-right {
+    display: inline;
+  }
+
+  .sum {
+    grid-template-columns: 50% 50%;
+  }
+
+  .hide-desktop {
+    display: block;
+  }
+
+  .bottom {
+    display: block;
+  }
+
+  .shipping,
+  .forms2 {
+    margin: auto 1em;
+  }
+
+  .methods {
+    display: flex;
+  }
+}
+
+/* Media screens for tablet */
+@media (min-width: 700px) and (max-width: 1390px) {
+  p,
+  h3,
+  h4 {
+    margin-left: 1em;
+  }
+
+  a.button,
+  button {
+    font-size: 1em;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .top {
+    display: inline;
+  }
+
+  .left,
+  .right {
+    display: inline;
+  }
+
+  .sum {
+    grid-template-columns: 50% 50%;
+  }
+
+  .hide-desktop {
+    display: block;
+  }
+
+  .bottom {
+    display: block;
+  }
+  .cost {
+    margin-right: 0.5em;
+  }
+}

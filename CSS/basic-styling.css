@@ -1,0 +1,48 @@
+/*Basic styling*/
+@font-face {
+  font-family: "sans serif";
+  src: url("../fonts/SansSerifFLF.otf") format("opentype");
+  src: url("../fonts/SansSerifBldFLF.otf") format("opentype");
+  src: url(../fonts/SansSerifFLF-Italic.otf) format("opentype");
+}
+
+@font-face {
+  font-family: verdana;
+  src: url("../fonts/Verdana.ttf") format("truetype");
+  src: url("../fonts/verdanab.ttf") format("truetype");
+}
+
+:root {
+  font-family: "open sans", sans-serif, verdana;
+  font-size: 62.5%;
+  margin: 0 5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 2em;
+  overflow-x: hidden;
+  margin: 0 2em;
+}
+
+h1 {
+  color: rgb(10, 54, 65);
+}
+
+
+/* Media screens for mobile */
+@media (min-width: 370px) and (max-width: 699px) {
+  :root {
+    margin: 0;
+  }
+}
+
+/* Media screens for tablet */
+@media (min-width: 700px) and (max-width: 1390px) {
+  :root {
+    margin: 0;
+  }
+}

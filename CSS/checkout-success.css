@@ -1,0 +1,38 @@
+/*Body styling*/
+main {
+  text-align: center;
+}
+
+main img {
+  width: 100%;
+  max-height: 10em;
+  object-fit: contain;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+p {
+  text-align: center;
+}
+
+a.button {
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+  display: inline-block;
+  margin: 4em auto;
+}
+
+/* Media screens for tablet */
+@media (min-width: 700px) and (max-width: 1390px) {
+  a.button {
+    font-size: 1em;
+  }
+}

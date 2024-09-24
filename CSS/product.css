@@ -1,0 +1,113 @@
+/*Body styling*/
+main img {
+  display: block;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1em;
+  object-fit: cover;
+}
+
+main h1 {
+  color: black;
+}
+
+main h3 {
+  color: rgb(10, 54, 65);
+  margin: 2em 0;
+  text-align: right;
+}
+
+ul {
+  padding-left: 0;
+}
+
+a.button{
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+  display: flex;
+  margin: 4em auto;
+  justify-content: center;
+  width: 8em;
+}
+
+.bar {
+  background-color: rgb(10, 54, 65);
+  width: 96%;
+  height: 0.1em;
+  margin: 2em 0;
+}
+
+/* Media screens for desktop */
+@media (min-width: 1401px) {
+  a.button {
+    font-size: 1em;
+  }
+
+  main img {
+    max-width: 20em;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .main-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(10, 54, 65, 10%);
+    padding: 2em 0;
+  }
+}
+
+/* Media screens for mobile */
+@media (min-width: 370px) and (max-width: 699px) {
+  main h1 {
+    font-size: 20px;
+  }
+
+  main h1,
+  main h2,
+  main p {
+    text-align: center;
+  }
+
+  main img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+  }
+
+  main h3 {
+    text-align: center;
+  }
+}
+
+/* Media screens for tablet */
+@media (min-width: 700px) and (max-width: 1390px) {
+  main h1 {
+    font-size: 20px;
+  }
+
+  main h1,
+  main h2,
+  main p {
+    text-align: center;
+  }
+
+  main img {
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+  }
+
+  main h3 {
+    text-align: center;
+  }
+}

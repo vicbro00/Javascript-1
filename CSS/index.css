@@ -1,0 +1,188 @@
+/*Body styling*/
+
+h2 {
+  color: white;
+}
+
+img {
+  object-fit: cover;
+}
+
+a.mens-button,
+a.womens-button {
+  font-family: "Open Sans";
+  width: 8em;
+  padding: 1em 2em;
+  text-align: center;
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.front-page-img {
+  height: auto;
+  width: 100%;
+}
+
+.browse {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(10, 54, 65);
+}
+
+.browse-content {
+  display: flex;
+}
+
+.browse-text {
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.collections {
+  color: rgb(10, 54, 65);
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mens-collection,
+.womens-collection {
+  position: relative;
+}
+
+.mens-collection img,
+.womens-collection img {
+  border-radius: 2em;
+  max-width: 95%;
+  max-height: 65em;
+}
+
+.mens-collection .homepage-3,
+.womens-collection .homepage-4 {
+  position: relative;
+}
+
+.womens-collection img {
+  float: right;
+}
+
+.collection-link {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/* Media screens for desktop */
+@media (min-width: 1401px) {
+  
+  .browse-item img {
+    max-height: 25em;
+    margin: 0 6em;
+  }
+  
+  .browse-text {
+    color: white;
+    font-size: 1.5em;
+    width: 10em;
+  }
+
+  .browse img {
+    padding: 1em 0;
+  }
+
+  .mens-button,
+  .womens-button {
+    font-size: 1em;
+  }
+
+  .mens-button:hover,
+  .womens-button:hover {
+    background-color: rgb(21, 100, 21);
+    transition-duration: 0.5s;
+  }
+
+  .mens-button,
+  .womens-button {
+    transition-duration: 0.5s;
+  }
+
+  .womens-collection h2 {
+    margin-left: 5%;
+  }
+}
+
+/* Media screens for mobile */
+@media (min-width: 370px) and (max-width: 699px) {
+  
+  body {
+    margin: 0;
+   }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 0.9em;
+  }
+
+  .browse img {
+    height: 10em;
+    padding: 1em 0;
+  }
+
+  .homepage-1,
+  .homepage-2 {
+    margin: 0 0.2em;
+  }
+
+  .collections {
+    flex-direction: column;
+  }
+  
+  .mens-collection,
+  .womens-collection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Media screens for tablet */
+@media (min-width: 700px) and (max-width: 1390px) {
+
+  body {
+    margin: 0;
+   }
+
+  button {
+    font-size: 1em;
+  }
+
+  .browse img {
+    height: 10em;
+    padding: 1em 0;
+  }
+
+  .browse-text {
+    width: 30%;
+  }
+
+  .homepage-1,
+  .homepage-2 {
+    margin: 0 1em;
+  }
+}
