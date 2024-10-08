@@ -195,10 +195,22 @@ button:hover {
     min-height: 20em;
     min-width: 16em;
   }
+
+  button {
+    font-size: 1em;
+  }
 }
 
 /* Media screens for mobile */
 @media (min-width: 375px) and (max-width: 1280px) {
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .products {
+    margin: 0 1em;
+  }
+  
   body {
     margin: 0;
    }
