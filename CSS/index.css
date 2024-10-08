@@ -1,5 +1,4 @@
 /*Body styling*/
-
 h2 {
   color: white;
 }
@@ -8,6 +7,8 @@ img {
   object-fit: cover;
 }
 
+/*Products styling */
+/* Buttons styling */
 a.mens-button,
 a.womens-button {
   font-family: "Open Sans";
@@ -24,11 +25,55 @@ a.womens-button {
   left: 10%;
 }
 
+button {
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+}
+
+.container button:hover {
+  transform: rotate(6deg);
+  background-color: rgba(10, 54, 65, 0.8);
+}
+
+/* Image styling */
+.container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px grey;
+}
+
 .front-page-img {
   height: auto;
   width: 100%;
 }
 
+.container img {
+  margin: 1em 0;
+  background-color: grey;
+  padding: 2em;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+  justify-items: center;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Rest of page styling */
 .browse {
   display: flex;
   justify-content: space-around;
@@ -85,38 +130,6 @@ a.womens-button {
   grid-template-columns: auto auto;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5%;
-  justify-items: center;
-}
-
-.container img {
-  margin: 1em 0;
-  background-color: grey;
-  padding: 2em;
-  border-radius: 25px;
-  display: inline-block;
-}
-
-.child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button {
-  font-family: "Open Sans";
-  background-color: rgb(10, 54, 65);
-  border-style: solid;
-  border-color: black;
-  cursor: pointer;
-  color: white;
-  padding: 1em 2em;
-}
-
 /* Media screens for desktop */
 @media (min-width: 1280px) {
   .browse-item img {
@@ -132,6 +145,10 @@ button {
 
   .browse img {
     padding: 1em 0;
+  }
+
+  .container img {
+    max-width: 10em;
   }
 
   .mens-button,
@@ -161,8 +178,7 @@ button {
 }
 
 /* Media screens for mobile */
-@media (min-width: 375px) {
-  
+@media (min-width: 375px) and (max-width: 1280px) {
   body {
     margin: 0;
    }
@@ -203,8 +219,7 @@ button {
 }
 
 /* Media screens for tablet */
-@media (min-width: 767px) {
-
+@media (min-width: 767px) and (max-width: 1280px) {
   body {
     margin: 0;
    }

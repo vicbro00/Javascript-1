@@ -24,37 +24,35 @@
 
   <body id="page-index">
     <header>
-      <nav>
-        <a href="index.html" aria-label="Go to Index Page">
-          <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+      <div>
+        <div id="offScreen" class="off-screen">
+          <ul class="menu">
+            <li><a class="menuLink" href="index.html">Home</a></li>
+            <li><a class="menuLink" href="product.html">Products</a></li>
+            <li><a class="menuLink" href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <nav>
+          <div class="hide-mobile">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
           </div>
-        </a>
-        <div>
-          <a href="index.html">
-            <img src="./pictures/menu-bar-logo.png" alt="Rainy Days letters only logo">
-          </a>
+          <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="cart">
+            <div class="cart-button">
+              <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
+              <p onclick="toggleCart()">Cart</p>
+            </div>
+            <ul id="cartMenu">
+              <p>Product</p>
+            </ul>
+          </div>
         </div>
-        <ul class="nav-links">
-          <li>
-            <a href="list-of-jackets.html" target="_blank" class="men">Men's</a>
-          </li>
-          <li>
-            <a href="list-of-jackets.html" target="_blank" class="women">Women's</a>
-          </li>
-          <li>
-            <a href="contact.html" target="_blank" class="contact">Contact</a>
-          </li>
-          <li>
-            <a href="about.html" target="_blank" class="about">About</a>
-          </li>
-        </ul>
-        <div class="cart">
-          <a href="checkout.html" target="_blank">
-            <i class="fa-solid fa-cart-shopping"></i><div class="cart-text">Cart</div>
-          </a>
-        </div>
-      </nav>
     </header>
     
     <main>
@@ -65,7 +63,7 @@
         <div class="container">
           <div class="child">
             <a href="product.html">
-            <img src="Pictures/product1.png">
+              <img src="Pictures/product1.png" alt="">
             </a>
             <button>Add to cart</button>
           </div>
@@ -101,17 +99,17 @@
       <div class="browse">
         <div class="browse-content">
         <div class="browse-text">
-          <a href="list-of-jackets.html" target="_blank">
+          <a href="list-of-jackets.html">
             <h2>Browse our new looks&#33;</h2>
           </a>
         </div>
         <div class="browse-item">
-        <a href="list-of-jackets.html" target="_blank">
+        <a href="list-of-jackets.html">
           <img class="homepage-1" src="./pictures/homepage-1.jpg" alt="woman in yellow rainjacket standing on the mountains looking out">
         </a>
         </div>
         <div class="browse-item">
-        <a href="list-of-jackets.html" target="_blank">
+        <a href="list-of-jackets.html">
           <img class="homepage-2" src="./pictures/homepage-2.jpg" alt="a man in a black rainjacket standing looking left">
         </a>
         </div>
@@ -121,14 +119,14 @@
         <div class="mens-collection">
           <h2>Men's Collection</h2>
           <img class="homepage-3" src="./pictures/homepage-3.jpg" alt="Man standing on mountain with clouds and snow looking back at the camera.">
-          <a href="list-of-jackets.html" target="_blank" class="mens-button">
+          <a href="list-of-jackets.html" class="mens-button">
             Shop for men
           </a>
         </div>
         <div class="womens-collection">
           <h2>Women's Collection</h2>
           <img class="homepage-4" src="./pictures/homepage-4.jpg" alt="Woman sitting on a rock on the mountain with her hands up in the air.">
-          <a href="list-of-jackets.html" target="_blank" class="womens-button">
+          <a href="list-of-jackets.html" class="womens-button">
             Shop for women
           </a>
         </div>
@@ -157,11 +155,15 @@
       <div class="footer-right">
         <h3 id="support">Support</h3>
         <h3 id="warehouses">Warehouses</h3>
-        <a href="about.html" target="_blank"><h3 id="about">About</h3>
+        <a href="about.html"><h3 id="about">About</h3>
         </a>
-        <a href="contact.html" target="_blank"><h3 id="contact">Contact</h3>
+        <a href="contact.html"><h3 id="contact">Contact</h3>
         </a>
       </div>
     </footer>
+
+
+    <script src="javascript/index.js"></script>
+    <script src="javascript/header.js"></script>
   </body>
 </html>

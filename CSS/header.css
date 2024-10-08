@@ -1,69 +1,141 @@
-/*Header styling*/
-nav {
+/* Header styling */
+ul {
+  margin: 0;
+}
+
+header {
+  font-size: 1.5em;
   background-color: rgb(10, 54, 65);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 2em;
-  align-items: center;
-  justify-items: center;
+  width: 100%;
+  margin: 0;
 }
 
-header img {
-  max-width: 4em;
+/* Hamburger menu styling */
+.off-screen {
+  background-color: rgb(10, 54, 65);
+  max-width: 200px;
+  position: absolute;
+  display: none;
+  margin: auto;
+  padding: 1em;
+  top: 10%;
 }
 
-header i {
+.menu {
+  padding: 0;
+  text-align: center;
+}
+
+ul li a {
   color: white;
+  text-decoration: none;
 }
 
-li {
+ul li {
   list-style-type: none;
+  padding: 1rem 0;
 }
 
-li a {
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   color: white;
 }
 
-.cart {
-  color: white;
+/* Cart menu styling */
+.hamburger-menu {
+  text-align: left;
+  margin-left: 1em;
+  width: 10%;
 }
 
-.cart-text {
+.hamburger-menu:hover {
+  cursor: pointer;
+}
+
+.cart-button p {
   display: inline-block;
+}
+
+.cart-button {
+  text-align: right;
+  margin-right: 1em;
+}
+
+.cart-button p:hover,
+.cart-button i:hover {
+  cursor: pointer;
+  color: rgb(141, 141, 141);
+}
+
+.cart ul {
+  background-color: rgb(10, 54, 65);
+  max-width: 200px;
+  position: absolute;
+  display: none;
+  margin: auto;
+  padding: 1em;
+  top: 10%;
+}
+
+#cartMenu {
+  background-color: rgb(10, 54, 65);
+  position: absolute;
+  width: 100%;
+  display: none;
+  margin: auto;
+  padding: 1em;
+}
+
+ul p {
+  padding: 1rem 0;
   color: white;
 }
 
  /* Media screens for desktop */
 @media (min-width: 1280px) {
-  nav {
-    background-color: rgb(10, 54, 65);
-    display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr;
-    height: 2em;
-    align-content: center;
-    font-size: 1.5em;
-    padding: 1.5em;
+  .off-screen {
+    display: none;
   }
-  
-  .nav-links {
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-  }
-  
+
   .hamburger-menu {
     display: none;
+  }
+
+  .hide-mobile li {
+    display: inline-block;
+    columns: white;
+  }
+
+  .cart-button {
+    display: inline-block;
+  }
+
+  nav {
+    justify-items: center;
+  }
+
+  .hide-mobile li {
+    padding: 0 1em;
+  }
+
+  .hide-mobile a:hover {
+    cursor: pointer;
+    color: rgb(141, 141, 141);
   }
 }
 
 /* Media screens for mobile */
-@media (min-width: 375px) {
-  ul {
+@media (min-width: 375px) and (max-width: 1280px) {
+  .hide-mobile {
     display: none;
   }
 }
 
 /* Media screens for tablet */
-@media (min-width: 767px) {
-  
+@media (min-width: 767px) and (max-width: 1280px) {
+  .hide-mobile {
+    display: none;
+  }
 }

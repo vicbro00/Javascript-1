@@ -17,7 +17,7 @@ main h3 {
   text-align: right;
 }
 
-ul {
+main ul {
   padding-left: 0;
 }
 
@@ -35,11 +35,19 @@ a.button{
   width: 8em;
 }
 
+.button:hover {
+  background-color: rgba(10, 54, 65, 0.8);
+}
+
 .bar {
   background-color: rgb(10, 54, 65);
   width: 96%;
   height: 0.1em;
   margin: 2em 0;
+}
+
+main h3:hover {
+  color: rgba(10, 54, 65, 0.8);
 }
 
 /* Media screens for desktop */
@@ -67,7 +75,7 @@ a.button{
 }
 
 /* Media screens for mobile */
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 1280px) {
   main h1 {
     font-size: 20px;
   }
@@ -90,7 +98,7 @@ a.button{
 }
 
 /* Media screens for tablet */
-@media (min-width: 767px) {
+@media (min-width: 767px) and (max-width: 1280px) {
   main h1 {
     font-size: 20px;
   }

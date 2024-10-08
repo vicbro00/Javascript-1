@@ -24,37 +24,35 @@
 
   <body id="page-checkout">
     <header>
-      <nav>
-        <a href="index.html" aria-label="Go to Index Page">
-          <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
+      <div>
+        <div id="offScreen" class="off-screen">
+          <ul class="menu">
+            <li><a class="menuLink" href="index.html">Home</a></li>
+            <li><a class="menuLink" href="product.html">Products</a></li>
+            <li><a class="menuLink" href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <nav>
+          <div class="hide-mobile">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
           </div>
-        </a>
-        <div>
-          <a href="index.html">
-            <img src="./pictures/menu-bar-logo.png" alt="Rainy Days letters only logo">
-          </a>
+          <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="cart">
+            <div class="cart-button">
+              <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
+              <p onclick="toggleCart()">Cart</p>
+            </div>
+            <ul id="cartMenu">
+              <p>Product</p>
+            </ul>
+          </div>
         </div>
-        <ul class="nav-links">
-          <li>
-            <a href="list-of-jackets.html" target="_blank" class="men">Men's</a>
-          </li>
-          <li>
-            <a href="list-of-jackets.html" target="_blank" class="women">Women's</a>
-          </li>
-          <li>
-            <a href="contact.html" target="_blank" class="contact">Contact</a>
-          </li>
-          <li>
-            <a href="about.html" target="_blank" class="about">About</a>
-          </li>
-        </ul>
-        <div class="cart">
-          <a href="checkout.html" target="_blank">
-            <i class="fa-solid fa-cart-shopping"></i><div class="cart-text">Cart</div>
-          </a>
-        </div>
-      </nav>
     </header>
     
     <main>
@@ -217,4 +215,7 @@
         </a>
       </div>
     </footer>
+
+    <script src="javascript/header.js"></script>
   </body>
+</html>

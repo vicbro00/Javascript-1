@@ -42,7 +42,7 @@ footer i {
 }
 
 /* Media screen for mobile devices */
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 1280px) {
   body {
     margin: 0;
    }
@@ -63,7 +63,7 @@ footer i {
 }
 
 /*Media screen for tablet devices */
-@media (min-width: 767px) {
+@media (min-width: 767px) and (max-width: 1280px) {
   body {
     margin: 0;
    }
