@@ -3,10 +3,6 @@ h2 {
   color: white;
 }
 
-img {
-  object-fit: cover;
-}
-
 /*Products styling */
 /* Buttons styling */
 a.mens-button,
@@ -33,6 +29,7 @@ button {
   cursor: pointer;
   color: white;
   padding: 1em 2em;
+  margin: 1em;
 }
 
 .container button:hover {
@@ -52,11 +49,9 @@ button {
 }
 
 .container img {
-  margin: 1em 0;
   background-color: grey;
   padding: 2em;
   border-radius: 25px;
-  display: inline-block;
 }
 
 .container {
@@ -65,6 +60,7 @@ button {
   justify-content: center;
   gap: 5%;
   justify-items: center;
+  background-color: rgba(10, 54, 65, 0.8);
 }
 
 .child {
@@ -91,6 +87,15 @@ button:hover {
 
 .card.hide {
   display: none;
+}
+
+.container p {
+  margin: 0;
+  color: white;
+}
+
+.container img {
+  margin: 0;
 }
 
 /* Rest of page styling */
@@ -167,10 +172,6 @@ button:hover {
     padding: 1em 0;
   }
 
-  .container img {
-    max-width: 10em;
-  }
-
   .mens-button,
   .womens-button {
     font-size: 1em;
@@ -192,8 +193,9 @@ button:hover {
   }
 
   .products img {
-    min-height: 20em;
-    min-width: 16em;
+    width: 10em;
+    height: 12em;
+    margin: 1em;
   }
 
   button {
@@ -245,8 +247,9 @@ button:hover {
   }
 
   .products img {
-    max-width: 9em;
-    max-height: 9em;
+    width: 10em;
+    height: 12em;
+    margin: 1em;
   }
 }
 
