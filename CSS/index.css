@@ -80,9 +80,17 @@ button {
   gap: 10px;
 }
 
-.button.active {
+button.active {
   background: rgba(10, 54, 65, 0.8);
   color: white;
+}
+
+button:hover {
+  background-color: rgba(10, 54, 65, 0.8);
+}
+
+.card.hide {
+  display: none;
 }
 
 /* Rest of page styling */
