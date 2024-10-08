@@ -73,6 +73,18 @@ button {
   align-items: center;
 }
 
+/* Filter buttons */
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button.active {
+  background: rgba(10, 54, 65, 0.8);
+  color: white;
+}
+
 /* Rest of page styling */
 .browse {
   display: flex;
