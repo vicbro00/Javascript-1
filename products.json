@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": "b8b528fc-6c60-41f6-a5a9-9a8b27a9482a",
+      "title": "Rainy Days Akra Jacket",
+      "description": "The Women's Rainy Days Akra jacket is bound to be your new go-to water-repellent rain jacket.",
+      "gender": "Female",
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "baseColor": "Red",
+      "price": 129.99,
+      "discountedPrice": 119.99,
+      "onSale": true,
+      "image": {
+        "url": "https://static.cloud.noroff.dev/api/rainy-days/0-akra-jacket.jpg",
+        "alt": "An orange and grey jacket with a hood"
+      },
+      "tags": ["jacket", "womens"],
+      "favorite": true
+    },
+    {
+      "id": "97e77845-a485-4301-827f-51b673d4230f",
+      "title": "Rainy Days M83 Jacket",
+      "description": "The Women's Rainy Days M83 jacket delivers waterproof, breathable protection from head to waist. Perfect for the adventure seekers.",
+      "gender": "Female",
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "baseColor": "Black",
+      "price": 109.99,
+      "discountedPrice": 99.99,
+      "onSale": true,
+      "image": {
+        "url": "https://static.cloud.noroff.dev/api/rainy-days/1-m83-jacket.jpg",
+        "alt": "A women's black jacket with the brands logo on the front"
+      },
+      "tags": ["jacket", "womens"],
+      "favorite": true
+    }
+    
+  ],
+  "meta": {
+    "isFirstPage": true,
+    "isLastPage": true,
+    "currentPage": 1,
+    "previousPage": null,
+    "nextPage": null,
+    "pageCount": 1,
+    "totalCount": 2
+  }
+}
