@@ -46,10 +46,20 @@
           <div class="cart">
             <div class="cart-button">
               <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
+              <span class="quantity">0</span>
               <p onclick="toggleCart()">Cart</p>
             </div>
             <ul id="cartMenu">
-              <p>Product</p>
+              <div class="cart-content">
+                <div class="products">
+                  <div class="container"></div>
+                </div>
+                <div class="head"><p>Products</p></div>
+                <div id="cartItem">Your cart is empty</div>
+                <div class="foot"></div>
+                <h3>Total</h3>
+                <h2 id="total">£ 0.00</h2>
+              </div>
             </ul>
           </div>
         </div>
@@ -110,6 +120,7 @@
       </div>
     </footer>
 
-    <script src="javascript/header.js"></script>
+    <script src="header.js" async></script>
+    <script src="product.js" async></script>
   </body>
 </html>
