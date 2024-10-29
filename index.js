@@ -1,78 +1,80 @@
-/* Fetch data */
-fetch('https://v2.api.noroff.dev/rainy-days')
-.then(response => response.json())
-.then(data => {
-  displayProducts(data.data);
-})
-.catch(error => console.log('Error fetching data:', error));
+let cart = [];
+let totalPrice = 0;
+let data;
 
+fetch('products.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(jsonData => {
+    data = jsonData;
+    console.log('Data loaded:', data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
 
-let cartItems = []; // Array to hold cart items
-const cartMenu = document.getElementById('cartMenu');
-const cartItemDisplay = document.getElementById('cartItem');
-const totalDisplay = document.getElementById('total');
-
+// Function to add a product to the cart
 function addToCart(productId) {
-  // Dummy data for products
-  const products = [
-    { id: 0, name: "Graves All Weather Jacket", price: 89.90, imgSrc: "Pictures/product-1.jpg" },
-    { id: 1, name: "Annie Workout Jacket", price: 39.90, imgSrc: "Pictures/product-2.jpg" },
-    { id: 2, name: "Bard Workout Jacket", price: 39.90, imgSrc: "Pictures/product-3.jpg" },
-    { id: 3, name: "Milio Rain Jacket", price: 69.90, imgSrc: "Pictures/product-4.jpg" },
-    { id: 4, name: "Jayce Rain Jacket", price: 59.90, imgSrc: "Pictures/product-5.jpg" },
-    { id: 5, name: "Braum All Weather Jacket", price: 79.90, imgSrc: "Pictures/product-6.jpg" },
-    { id: 6, name: "Ekko Fleece Jacket", price: 29.90, imgSrc: "Pictures/product-7.jpg" }
-  ];
+  if (!data) {
+    console.error('Data is not loaded yet');
+    return;
+  }
 
-  const product = products.find(p => p.id === productId);
+  const product = data.data.find(item => item.id === productId);
+  
   if (product) {
-    cartItems.push(product); // Add product to cart
-    updateCartDisplay(); // Update the cart display
+    cart.push(product);
+    totalPrice += product.price;
+    console.log(`Added to cart: ${product.title}`);
+    
+    updateCartDisplay();
+  } else {
+    console.error('Product not found');
   }
 }
 
 function updateCartDisplay() {
-  cartItemDisplay.innerHTML = ''; // Clear current cart items
-  let total = 0;
+  const cartItemContainer = document.getElementById('cartItem');
 
-  if (cartItems.length === 0) {
-    cartItemDisplay.textContent = "Your cart is empty";
-  } else {
-    cartItems.forEach((item, index) => {
-      const itemDiv = document.createElement('div');
-      itemDiv.className = 'cart-item'; // Add a class for styling if needed
+  cartItemContainer.innerHTML = '';
 
-      // Create and append the image element
-      const img = document.createElement('img');
-      img.src = item.imgSrc; // Set the image source
-      img.alt = item.name; // Set the alt text
-      img.style.width = '50px'; // Adjust the width as needed
-      img.style.height = 'auto'; // Maintain aspect ratio
+  let totalPrice = 0;
 
-      // Create and append the remove button
-      const removeButton = document.createElement('button');
-      removeButton.textContent = 'Remove';
-      removeButton.onclick = () => removeFromCart(index); // Call removeFromCart with the current index
+  cart.forEach((item, index) => {
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
 
-      // Append the image and text to the item div
-      itemDiv.appendChild(img);
-      itemDiv.appendChild(document.createTextNode(` ${item.name} - £${item.price.toFixed(2)} `));
-      itemDiv.appendChild(removeButton); // Append the remove button
-      cartItemDisplay.appendChild(itemDiv); // Add item div to cart display
+    cartItem.innerHTML = `
+      <img src="${item.image.url}" alt="${item.image.alt}">
+      <p>${item.title}</p>
+      <p>£${item.price.toFixed(2)}</p>
+      <button onclick="removeFromCart(${index})">Remove from Cart</button>
+    `;
 
-      total += item.price; // Calculate total price
-    });
-  }
+    cartItemContainer.appendChild(cartItem);
 
-  totalDisplay.textContent = `£ ${total.toFixed(2)}`; // Update total display
+    totalPrice += item.price;
+  });
+
+  const totalDisplay = document.getElementById('total');
+  totalDisplay.innerText = `£${totalPrice.toFixed(2)}`; // Update total price display
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  
+  updateCartDisplay();
 }
 
 function removeFromCart(index) {
-  cartItems.splice(index, 1); // Remove the item at the specified index
-  updateCartDisplay(); // Update the cart display after removal
+  cart.splice(index, 1);
+  updateCartDisplay();
 }
-
-
 
 /* Filter buttons */
 const filterButtons = document.querySelectorAll(".filter-buttons button");

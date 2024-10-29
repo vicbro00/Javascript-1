@@ -1,41 +1,111 @@
 {
   "data": [
     {
-      "id": "b8b528fc-6c60-41f6-a5a9-9a8b27a9482a",
-      "title": "Rainy Days Akra Jacket",
+      "id": "product-1",
+      "title": "Graves All Weather Jacket",
       "description": "The Women's Rainy Days Akra jacket is bound to be your new go-to water-repellent rain jacket.",
       "gender": "Female",
       "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
       "baseColor": "Red",
-      "price": 129.99,
-      "discountedPrice": 119.99,
-      "onSale": true,
+      "price": 89.90,
       "image": {
-        "url": "https://static.cloud.noroff.dev/api/rainy-days/0-akra-jacket.jpg",
+        "url": "/pictures/product-1.jpg",
         "alt": "An orange and grey jacket with a hood"
       },
       "tags": ["jacket", "womens"],
       "favorite": true
     },
     {
-      "id": "97e77845-a485-4301-827f-51b673d4230f",
-      "title": "Rainy Days M83 Jacket",
+      "id": "product-2",
+      "title": "Annie Workout Jacket",
       "description": "The Women's Rainy Days M83 jacket delivers waterproof, breathable protection from head to waist. Perfect for the adventure seekers.",
       "gender": "Female",
       "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
       "baseColor": "Black",
-      "price": 109.99,
-      "discountedPrice": 99.99,
-      "onSale": true,
+      "price": 39.90,
       "image": {
-        "url": "https://static.cloud.noroff.dev/api/rainy-days/1-m83-jacket.jpg",
+        "url": "/pictures/product-2.jpg",
         "alt": "A women's black jacket with the brands logo on the front"
       },
       "tags": ["jacket", "womens"],
       "favorite": true
-    }
-    
-  ],
+    },
+  {
+    "id": "product-3",
+    "title": "Bard Workout Jacket",
+    "description": "Men's workout jacket. Light and breathable",
+    "gender": "Male",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "baseColor": "Red",
+    "price": 39.90,
+    "image": {
+      "url": "/pictures/product-3.jpg",
+      "alt": "A men's red jacket with black underarms."
+    },
+    "tags": ["jacket", "mens"],
+    "favorite": true
+  },
+  {
+    "id": "product-4",
+    "title": "Milio Rain Jacket",
+    "description": "Men's rain jacket. Perfect for rainy days being outside, or on a walk in the mountains or by the lake.",
+    "gender": "Male",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "baseColor": "Black",
+    "price": 69.90,
+    "image": {
+      "url": "/pictures/product-4.jpg",
+      "alt": "A men's black rain jacket, with yellos logo and accents."
+    },
+    "tags": ["jacket", "mens"],
+    "favorite": true
+  },
+  {
+    "id": "product-5",
+    "title": "Jayce Rain Jacket",
+    "description": "Men's rain jacket that fits perfect for those cold days outside.",
+    "gender": "Male",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "baseColor": "Grey",
+    "price": 59.90,
+    "image": {
+      "url": "/pictures/product-5.jpg",
+      "alt": "A men's grey rain jacket with a logo on the collar."
+    },
+    "tags": ["jacket", "mens"],
+    "favorite": true
+  },
+  {
+    "id": "product-6",
+    "title": "Braum All Weather Jacket",
+    "description": "A thick and warm black jacket thats suitable for very cold days outside.",
+    "gender": "Male",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "baseColor": "Black",
+    "price": 79.90,
+    "image": {
+      "url": "/pictures/product-6.jpg",
+      "alt": "A men's black jacket with grey arms and logos on left arm."
+    },
+    "tags": ["jacket", "mens"],
+    "favorite": true
+  },
+  {
+    "id": "product-7",
+    "title": "Ekko Fleece Jacket",
+    "description": "A thin green fleece jacket that fits perfectly underneath a rain jacket.",
+    "gender": "Male",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "baseColor": "Black",
+    "price": 29.90,
+    "image": {
+      "url": "/pictures/product-7.jpg",
+      "alt": "A men's green fleece jacket with two pockets and a zipper."
+    },
+    "tags": ["jacket", "mens"],
+    "favorite": true
+  }
+],
   "meta": {
     "isFirstPage": true,
     "isLastPage": true,

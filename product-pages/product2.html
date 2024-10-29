@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Rainy Days | Product Page</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./pictures/favicon-32x32.png">
-	  <link rel="icon" type="image/png" sizes="192x192" href="./pictures/android-chrome-192x192.png">
-	  <link rel="icon" type="image/png" sizes="16x16" href="./pictures/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./pictures/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./pictures/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-32x32.png">
+	  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/android-chrome-192x192.png">
+	  <link rel="icon" type="image/png" sizes="16x16" href="/pictures/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/pictures/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/pictures/apple-touch-icon.png">
     <link rel="stylesheet" href="/css/basic-styling.css">
     <link rel="stylesheet" href="/css/product.css">
     <link rel="stylesheet" href="/css/header.css">
@@ -52,13 +52,14 @@
             <ul id="cartMenu">
               <div class="cart-content">
                 <div class="products">
-                  <div class="container"></div>
+                  <div class="container">
+                    <div class="head"><p>Products</p></div>
+                    <div id="cartItem">Your cart is empty</div>
+                  </div>
                 </div>
-                <div class="head"><p>Products</p></div>
-                <div id="cartItem">Your cart is empty</div>
                 <div class="foot"></div>
                 <h3>Total</h3>
-                <h2 id="total">£ 0.00</h2>
+                <h2 id="total">£0.00</h2>
               </div>
             </ul>
           </div>
@@ -76,12 +77,11 @@
           <li>Usage: Workout</li>
         </ul>
         <div class="details">
-          <p>Grey workout jacket. Perfect for an acitve lifestyle.</p>
+          <p>Grey workout jacket. Perfect for an active lifestyle.</p>
           <h2>£39.90</h2>
         </div>
         <div class="bar"></div>
-        <a href="checkout.html" class="button">Add to cart
-        </a>
+        <button data-id="product-2" onclick="addToCart('product-2')">Add to Cart</button>
         </div>
       </div>
       <a href="checkout.html">
@@ -120,6 +120,8 @@
       </div>
     </footer>
 
-    <script src="header.js"></script>
+
+    <script src="/header.js" async></script>
+    <script src="/product.js" async></script>
   </body>
 </html>

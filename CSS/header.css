@@ -89,6 +89,10 @@ nav {
   text-align: center;
 }
 
+#cartMenu p {
+  font-size: 1em;
+}
+
 .close-button {
   font-family: "Open Sans";
   background-color: rgb(10, 54, 65);
@@ -178,10 +182,6 @@ ul p {
 
   #cartMenu {
     padding: 0 3.5em;
-  }
-
-  .cart-item img {
-    width: 40em;
   }
 }
 

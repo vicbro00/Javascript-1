@@ -21,6 +21,16 @@ main ul {
   padding-left: 0;
 }
 
+button {
+  font-family: "Open Sans";
+  background-color: rgb(10, 54, 65);
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 1em 2em;
+}
+
 a.button{
   font-family: "Open Sans";
   background-color: rgb(10, 54, 65);
