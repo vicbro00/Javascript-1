@@ -27,9 +27,9 @@
       <div>
         <div id="offScreen" class="off-screen">
           <ul class="menu">
-            <li><a class="menuLink" href="index.html">Home</a></li>
+            <li><a class="menuLink" href="/index.html">Home</a></li>
             <li><a class="menuLink" href="/product-pages/product1.html">Products</a></li>
-            <li><a class="menuLink" href="checkout.html">Checkout</a></li>
+            <li><a class="menuLink" href="/checkout.html">Checkout</a></li>
           </ul>
         </div>
         <nav>
@@ -52,13 +52,14 @@
             <ul id="cartMenu">
               <div class="cart-content">
                 <div class="products">
-                  <div class="container"></div>
+                  <div class="container">
+                    <div class="head"><p>Products</p></div>
+                    <div id="cartItem">Your cart is empty</div>
+                  </div>
                 </div>
-                <div class="head"><p>Products</p></div>
-                <div id="cartItem">Your cart is empty</div>
                 <div class="foot"></div>
                 <h3>Total</h3>
-                <h2 id="total">£ 0.00</h2>
+                <h2 id="total">£0.00</h2>
               </div>
             </ul>
           </div>
@@ -80,8 +81,7 @@
           <h2>£79.90</h2>
         </div>
         <div class="bar"></div>
-        <a class="button">Add to cart
-        </a>
+        <button data-id="product-6" onclick="addToCart('product-6')">Add to Cart</button>
         </div>
       </div>
       <a href="checkout.html">
@@ -120,6 +120,6 @@
       </div>
     </footer>
 
-    <script src="javascript/header.js"></script>
+    <script src="/cart.js"></script>
   </body>
 </html>

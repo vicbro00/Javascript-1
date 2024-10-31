@@ -27,9 +27,9 @@
       <div>
         <div id="offScreen" class="off-screen">
           <ul class="menu">
-            <li><a class="menuLink" href="index.html">Home</a></li>
+            <li><a class="menuLink" href="/index.html">Home</a></li>
             <li><a class="menuLink" href="/product-pages/product1.html">Products</a></li>
-            <li><a class="menuLink" href="checkout.html">Checkout</a></li>
+            <li><a class="menuLink" href="/checkout.html">Checkout</a></li>
           </ul>
         </div>
         <nav>
@@ -52,13 +52,14 @@
             <ul id="cartMenu">
               <div class="cart-content">
                 <div class="products">
-                  <div class="container"></div>
+                  <div class="container">
+                    <div class="head"><p>Products</p></div>
+                    <div id="cartItem">Your cart is empty</div>
+                  </div>
                 </div>
-                <div class="head"><p>Products</p></div>
-                <div id="cartItem">Your cart is empty</div>
                 <div class="foot"></div>
                 <h3>Total</h3>
-                <h2 id="total">£ 0.00</h2>
+                <h2 id="total">£0.00</h2>
               </div>
             </ul>
           </div>
@@ -85,29 +86,11 @@
       <div class="top">
         <div class="product">
           <div class="layout">
-          <img src="./pictures/product1.png" alt="Rainy Days Orange Product Jacket"> 
-          <div class="product-info">
-            <p class="jacket">Graves Outdoor Jacket</p>
-            <div class="cost-and-button">
-              <p class="cost">£89.90</p>
-              <button>- 1 +</button>
-            </div>
+            <div id="checkoutCart"></div>
           </div>
-          </div>
-        <div class="sum">
-          <div class="sum-left">
-            <p>Total</p>
-            <p>Shipping</p>
-            <p>Total Sum</p>
-          </div>
-          <div class="sum-right">
-            <p>£89.90</p>
-            <p>Free</p>
-            <p>£89.90</p>
-          </div>
+          <p id="checkoutTotal">Total: £0.00</p>
         </div>
-        </div>
-        <h3 class="hide-desktop">2. Personal Details</h3>
+      <h3 class="hide-desktop">2. Personal Details</h3>
       <div class="forms">
         <fieldset>
           <legend>Contact information</legend>
@@ -194,7 +177,7 @@
       </div>
       </div>
       </div>
-      <a href="checkout-success.html" class="button">Complete order</a>
+      <a onclick="completeOrder()" href="checkout-success.html" class="button">Complete order</a>
     </main>
 
     <div class="border"></div>
@@ -226,6 +209,7 @@
       </div>
     </footer>
 
-    <script src="header.js" async></script>
+    <script src="cart.js" async></script>
+    <script src="checkout.js"></script>
   </body>
 </html>

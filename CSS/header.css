@@ -144,6 +144,26 @@ ul p {
   color: white;
 }
 
+.cart-item div button {
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
+
+.cart-item div button:hover {
+  transform: rotate(0);
+  background-color: white;
+  color: black;
+}
+
+#checkoutBtn {
+  margin: 2em 0;
+  padding: 0;
+}
+
+#checkoutBtn:hover {
+  transform: rotate(6deg);
+}
+
  /* Media screens for desktop */
 @media (min-width: 1280px) {
   .off-screen {

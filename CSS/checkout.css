@@ -11,7 +11,6 @@ main h1 {
   display: inline-block;
 }
 
-a.button,
 button {
   font-family: "Open Sans";
   background-color: rgb(10, 54, 65);
@@ -19,18 +18,33 @@ button {
   border-color: black;
   cursor: pointer;
   color: white;
-  padding: 1em 2em;
+  padding: 0 1em;
+  max-height: 3em;
+  margin: 0 1em;
 }
 
-a.button {
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+.cartItem {
   display: flex;
-  margin: 4em auto;
-  justify-content: center;
-  width: 8em;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(10, 54, 65, 10%);
+  margin: 2em 0;
 }
 
-a.button:hover {
-  background-color: rgb(10, 54, 65, 0.8);
+#checkoutCart {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#checkoutTotal {
+  font-weight: 600;
+  font-size: 2em;
+  background-color: rgb(10, 54, 65, 10%);
 }
 
 .bar {
@@ -52,74 +66,6 @@ a.button:hover {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 2.5%;
-}
-
-.cost-and-button {
-  display: flex;
-  justify-content: space-between;
-}
-
-/*Top part styling*/
-main img {
-  object-fit: contain;
-  border-style: solid;
-  border-color: black;
-  border-width: 0.1em;
-  max-width: 100%;
-  margin-left: 1em;
-}
-
-main h2 {
-  text-align: center;
-}
-
-main h3 {
-  display: inline-block;
-}
-
-.top img {
-  justify-self: center;
-  margin-top: 2em;
-}
-
-.top {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5%;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.product {
-  background-color: rgb(10, 54, 65, 10%);
-}
-
-.product-info {
-  display: grid;
-  grid-template-rows: 50% 50%;
-  margin: auto;
-}
-
-.jacket,
-.cost {
-  display: inline-block;
-  text-align: center;
-}
-
-.sum {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  text-align: left;
-  justify-content: right;
-}
-
-.sum-right, 
-.sum-left {
-  display: grid;
-  justify-content: right;
 }
 
 .form-item1,
@@ -171,11 +117,6 @@ input[type=checkbox] {
 
 /* Media screens for desktop */
 @media (min-width: 1280px) {
-  a.button,
-  button {
-    font-size: 1em;
-  }
-
   .hide-desktop {
     display: none;
   }
