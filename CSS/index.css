@@ -204,7 +204,7 @@ button:hover {
 }
 
 /* Media screens for mobile */
-@media (min-width: 375px) and (max-width: 1280px) {
+@media (min-width: 375px) {
   .filter-buttons {
     flex-wrap: wrap;
   }
@@ -254,7 +254,7 @@ button:hover {
 }
 
 /* Media screens for tablet */
-@media (min-width: 767px) and (max-width: 1280px) {
+@media (min-width: 767px) and (max-width: 1279px) {
   body {
     margin: 0;
    }

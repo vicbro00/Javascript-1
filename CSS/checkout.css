@@ -37,8 +37,8 @@ button:hover {
 }
 
 #checkoutCart {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
 }
 
 #checkoutTotal {
@@ -185,6 +185,18 @@ input[type=checkbox] {
 
   .methods {
     display: flex;
+  }
+
+  .cartItem {
+    flex-direction: column;
+  }
+
+  .cartItem img {
+    margin-top: 2em;
+  }
+
+  .cartItem button {
+    margin-bottom: 2em;
   }
 }
 
