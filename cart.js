@@ -20,7 +20,7 @@ let cart = [];
 let totalPrice = 0;
 let data;
 
-fetch('products.json')
+fetch('/products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -35,14 +35,13 @@ fetch('products.json')
     console.error('There was a problem with the fetch operation:', error);
   });
 
-// Function to add a product to the cart
+// Add items
 function addToCart(productId) {
   if (!data) {
     console.error('Data is not loaded yet');
     return; 
   } 
 
-  // Find the product by ID
   const product = data.data.find(item => item.id === productId);
   if (product) {
     const existingProduct = cart.find(item => item.id === productId);
@@ -89,7 +88,7 @@ function updateCartDisplay() {
   console.log('Cart updated:', cart);
 }
 
-// Function to update product quantities
+// Quantity
 function unitsBtn(action, index) {
   const item = cart[index];
   if (item) {
@@ -106,14 +105,13 @@ function unitsBtn(action, index) {
   }
 }
 
-// Function to remove an item from the cart
+// Remove items
 function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartDisplay();
   saveData();
 }
 
-// Saving and showing cart data with localStorage
 function saveData() {
   localStorage.setItem('data', JSON.stringify(cart));
 }

@@ -115,6 +115,18 @@ input[type=checkbox] {
   gap: 5%;
 }
 
+#completeOrderButton {
+  color: rgb(10, 54, 65);
+  font-size: 2em;
+  display: flex;
+  margin-top: 2em;
+  justify-content: center;
+}
+
+#completeOrderButton:hover {
+  background-color: rgb(10, 54, 65, 10%);
+}
+
 /* Media screens for desktop */
 @media (min-width: 1280px) {
   .hide-desktop {

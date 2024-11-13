@@ -1,8 +1,6 @@
 function increaseUnits() {
-
 }
 function decreaseUnits() {
-
 }
 
 
