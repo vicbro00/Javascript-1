@@ -1,3 +1,4 @@
+//Show menu
 function toggleMenu() {
   const x = document.getElementById('offScreen');
   if (x.style.display === 'block') {
@@ -7,6 +8,7 @@ function toggleMenu() {
   }
 }
 
+//Show cart
 function toggleCart() {
   const x = document.getElementById('cartMenu');
   if (x.style.display === 'block') {
@@ -88,7 +90,7 @@ function updateCartDisplay() {
   console.log('Cart updated:', cart);
 }
 
-// Quantity
+//Quantity
 function unitsBtn(action, index) {
   const item = cart[index];
   if (item) {
@@ -105,7 +107,7 @@ function unitsBtn(action, index) {
   }
 }
 
-// Remove items
+//Remove items
 function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartDisplay();
