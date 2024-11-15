@@ -22,7 +22,8 @@
     <script src="https://kit.fontawesome.com/7d33f7d3ef.js" crossorigin="anonymous"></script>
   </head>
 
-  <body id="page-index">
+  <body id="page-index" onload="showPage()">
+    <div id="loader"></div>
     <header>
       <div>
         <div id="offScreen" class="off-screen">
@@ -71,11 +72,26 @@
       <div class="products">
         <h1>All our products</h1>
         <div class="filter-buttons">
-          <button class="active" data-name="all">Show All</button>
-          <button data-name="fleece">Fleece</button>
-          <button data-name="workout">Workout</button>
-          <button data-name="all-weather">All Weather</button>
-          <button data-name="rain">Rain</button>
+          <div id="buttonContainer">
+            <button onclick="finishClick()" class="active" data-name="all">Show All</button>
+            <div class="loadingFilter" id="loadingFilter"></div>
+          </div>
+          <div class="buttonContainer">
+            <button onclick="finishClick()" data-name="fleece">Fleece</button>
+            <div class="loadClick" id="loadClick"></div>
+          </div>
+          <div class="buttonContainer">
+            <button onclick="finishClick()" data-name="workout">Workout</button>
+            <div class="loadClick" id="loadClick"></div>
+          </div>
+          <div class="buttonContainer">
+            <button onclick="finishClick()" data-name="all-weather">All Weather</button>
+            <div class="loadClick" id="loadClick"></div>
+          </div>
+          <div class="buttonContainer">
+            <button onclick="finishClick()" data-name="rain">Rain</button>
+            <div class="loadClick" id="loadClick"></div>
+          </div>
         </div>
 
         <div class="filterable-cards">
@@ -87,7 +103,7 @@
                 </a>
                 <p>Graves All Weather Jacket</p>
                 <p>£89.90</p>
-                <button data-id="product-1" onclick="addToCart('product-1')">Add to Cart</button>
+                <div><button data-id="product-1" onclick="addToCart('product-1');loadingCart()">Add to Cart</button></div>
               </div>
             </div>
             <div class="card" data-name="workout">
@@ -97,7 +113,7 @@
                 </a>
                 <p>Annie Workout Jacket</p>
                 <p>£39.90</p>
-                <button data-id="product-2" id="add-to-cart-button" onclick="addToCart('product-2')">Add to Cart</button>
+                <button data-id="product-2" onclick="addToCart('product-2');loadingCart()">Add to Cart</button>
               </div>
             </div>
             <div class="card" data-name="workout">
@@ -107,7 +123,7 @@
                 </a>
                 <p>Bard Workout Jacket</p>
                 <p>£39.90</p>
-                <button data-id="product-3" id="add-to-cart-button" onclick="addToCart('product-3')">Add to Cart</button>
+                <button data-id="product-3" onclick="addToCart('product-3');loadingCart()">Add to Cart</button>
               </div>
             </div>
             <div class="card" data-name="rain">
@@ -117,9 +133,10 @@
                 </a>
                 <p>Milio Rain Jacket</p>
                 <p>£69.90</p>
-                <button data-id="product-4" id="add-to-cart-button" onclick="addToCart('product-4')">Add to Cart</button>
+                <button data-id="product-4" onclick="addToCart('product-4');loadingCart()">Add to Cart</button>
               </div>
             </div>
+            <div id="loadAddToCart"></div>
             <div class="card" data-name="rain">
               <div class="child">
                 <a href="product-pages/product5.html">
@@ -127,7 +144,7 @@
                 </a>
                 <p>Jayce Rain Jacket</p>
                 <p>£59.90</p>
-                <button data-id="product-5" id="add-to-cart-button" onclick="addToCart('product-5')">Add to Cart</button>
+                <button data-id="product-5" onclick="addToCart('product-5');loadingCart()">Add to Cart</button>
               </div>
             </div>
             <div class="card" data-name="all-weather">
@@ -137,7 +154,7 @@
                 </a>
                 <p>Braum All Weather Jacket</p>
                 <p>£79.90</p>
-                <button data-id="product-6" id="add-to-cart-button" onclick="addToCart('product-6')">Add to Cart</button>
+                <button data-id="product-6" onclick="addToCart('product-6');loadingCart()">Add to Cart</button>
               </div>
             </div>
             <div class="card" data-name="fleece">
@@ -147,7 +164,7 @@
                 </a>
                 <p>Ekko Fleece Jacket</p>
                 <p>£29.90</p>
-                <button data-id="product-7" id="add-to-cart-button" onclick="addToCart('product-7')">Add to Cart</button>
+                <button data-id="product-7" onclick="addToCart('product-7');loadingCart()">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -223,5 +240,6 @@
 
     <script src="index.js" async></script>
     <script src="cart.js" async></script>
+    <script src="basic-js.js" async></script>
   </body>
 </html>

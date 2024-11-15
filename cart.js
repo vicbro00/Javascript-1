@@ -59,6 +59,7 @@ function addToCart(productId) {
   saveData();
 }
 
+//Updating cart
 function updateCartDisplay() {
   const cartItemContainer = document.getElementById('cartItem');
   cartItemContainer.innerHTML = '';
@@ -132,3 +133,16 @@ function showProducts() {
 }
 
 showProducts();
+
+//Load when adding to cart
+function loadAddToCart() {
+  document.getElementById('loadAddToCart').style.display = 'block';
+}
+
+function loadingCart() {
+  loadAddToCart();
+
+  setTimeout(() => {
+    document.getElementById('loadAddToCart').style.display = 'none';
+  }, 500)
+}

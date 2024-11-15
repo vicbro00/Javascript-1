@@ -22,7 +22,8 @@
     <script src="https://kit.fontawesome.com/7d33f7d3ef.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
+  <body id="page-product7" onload="showPage()">
+    <div id="loading"></div>
     <header>
       <div>
         <div id="offScreen" class="off-screen">
@@ -46,7 +47,6 @@
           <div class="cart">
             <div class="cart-button">
               <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
-              <span class="quantity">0</span>
               <p onclick="toggleCart()">Cart</p>
             </div>
             <ul id="cartMenu">
@@ -61,6 +61,7 @@
                 <h3>Total</h3>
                 <h2 id="total">£0.00</h2>
               </div>
+              <a href="/checkout.html"><button id="checkoutBtn">Continue to checkout</button></a>
             </ul>
           </div>
         </div>
@@ -81,10 +82,12 @@
           <h2>£29.90</h2>
         </div>
         <div class="bar"></div>
-        <button data-id="product-7" onclick="addToCart('product-7')">Add to Cart</button>
+        <div>
+          <button data-id="product-1" onclick="addToCart('product-1');loadingCart()">Add to Cart</button>
+          <div id="loadAddToCart"></div>
         </div>
       </div>
-      <a href="checkout.html">
+      <a href="/checkout.html">
         <h3>Proceed to Checkout
           <i class="fa-solid fa-arrow-right"></i>
         </h3>
@@ -121,5 +124,6 @@
     </footer>
 
     <script src="/cart.js"></script>
+    <script src="/basic-js.js" async></script>
   </body>
 </html>

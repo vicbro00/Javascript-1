@@ -155,6 +155,19 @@ button:hover {
   grid-template-columns: auto auto;
 }
 
+#loadAddToCart {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  border: 16px solid rgb(10, 54, 65);
+  border-top: 16px solid grey;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 2s linear infinite;
+}
+
 /* Media screens for desktop */
 @media (min-width: 1280px) {
   .browse-item img {
