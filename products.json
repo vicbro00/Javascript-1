@@ -9,7 +9,7 @@
       "baseColor": "Red",
       "price": 89.90,
       "image": {
-        "url": "/pictures/product-1.jpg",
+        "url": "Pictures/product-1.jpg",
         "alt": "An orange and grey jacket with a hood"
       },
       "tags": ["jacket", "womens"],
@@ -24,7 +24,7 @@
       "baseColor": "Black",
       "price": 39.90,
       "image": {
-        "url": "/pictures/product-2.jpg",
+        "url": "Pictures/product-2.jpg",
         "alt": "A women's black jacket with the brands logo on the front"
       },
       "tags": ["jacket", "womens"],
@@ -39,7 +39,7 @@
     "baseColor": "Red",
     "price": 39.90,
     "image": {
-      "url": "/pictures/product-3.jpg",
+      "url": "Pictures/product-3.jpg",
       "alt": "A men's red jacket with black underarms."
     },
     "tags": ["jacket", "mens"],
@@ -54,7 +54,7 @@
     "baseColor": "Black",
     "price": 69.90,
     "image": {
-      "url": "/pictures/product-4.jpg",
+      "url": "Pictures/product-4.jpg",
       "alt": "A men's black rain jacket, with yellos logo and accents."
     },
     "tags": ["jacket", "mens"],
@@ -69,7 +69,7 @@
     "baseColor": "Grey",
     "price": 59.90,
     "image": {
-      "url": "/pictures/product-5.jpg",
+      "url": "Pictures/product-5.jpg",
       "alt": "A men's grey rain jacket with a logo on the collar."
     },
     "tags": ["jacket", "mens"],
@@ -84,7 +84,7 @@
     "baseColor": "Black",
     "price": 79.90,
     "image": {
-      "url": "/pictures/product-6.jpg",
+      "url": "Pictures/product-6.jpg",
       "alt": "A men's black jacket with grey arms and logos on left arm."
     },
     "tags": ["jacket", "mens"],
@@ -99,7 +99,7 @@
     "baseColor": "Black",
     "price": 29.90,
     "image": {
-      "url": "/pictures/product-7.jpg",
+      "url": "Pictures/product-7.jpg",
       "alt": "A men's green fleece jacket with two pockets and a zipper."
     },
     "tags": ["jacket", "mens"],
