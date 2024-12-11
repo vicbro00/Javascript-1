@@ -2,6 +2,11 @@
 var load;
 
 function loadScreen() {
+  const loaderElement = document.getElementById('loading');
+  if (loaderElement) {
+    loaderElement.style.display = 'block';
+  }
+
   load = setTimeout(showPage, 1000);
 }
 
