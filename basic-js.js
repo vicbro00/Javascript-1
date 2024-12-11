@@ -6,7 +6,7 @@ function loadScreen() {
 }
 
 function showPage() {
-  const loaderElement = document.getElementById('loading');
+  const loaderElement = document.getElementById('loader');
   if (loaderElement) {
     loaderElement.style.display = 'none';
   } else {
