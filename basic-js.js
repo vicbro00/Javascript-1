@@ -6,7 +6,7 @@ function loadScreen() {
 }
 
 function showPage() {
-  const loaderElement = document.getElementById('loading'); // Use the correct ID
+  const loaderElement = document.getElementById('loading');
   if (loaderElement) {
     loaderElement.style.display = 'none';
   } else {
