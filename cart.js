@@ -1,20 +1,20 @@
 //Show menu
 function toggleMenu() {
   const x = document.getElementById('offScreen');
-  if (x) {
-    x.style.display = (x.style.display === 'block') ? 'none' : 'block';
+  if (x.style.display === 'block') {
+    x.style.display = 'none';
   } else {
-    console.error('Menu element not found');
+    x.style.display = 'block';
   }
 }
 
 //Show cart
 function toggleCart() {
   const x = document.getElementById('cartMenu');
-  if (x) {
-    x.style.display = (x.style.display === 'block') ? 'none' : 'block';
+  if (x.style.display === 'block') {
+    x.style.display = 'none';
   } else {
-    console.error('Cart menu element not found');
+    x.style.display = 'block';
   }
 }
 
@@ -62,10 +62,7 @@ function addToCart(productId) {
 //Updating cart
 function updateCartDisplay() {
   const cartItemContainer = document.getElementById('cartItem');
-  if (!cartItemContainer) {
-    console.error('Cart item container not found');
-    return;
-  }
+  cartItemContainer.innerHTML = '';
 
   let totalPrice = 0;
 
@@ -90,10 +87,8 @@ function updateCartDisplay() {
   });
 
   const totalDisplay = document.getElementById('total');
-  if (!totalDisplay) {
-    console.error('Total display element not found');
-    return;
-  }
+  totalDisplay.innerText = `£${totalPrice.toFixed(2)}`;
+  console.log('Cart updated:', cart);
 }
 
 //Quantity
@@ -141,21 +136,13 @@ showProducts();
 
 //Load when adding to cart
 function loadAddToCart() {
-  const loadElement = document.getElementById('loadAddToCart');
-  if (loadElement) {
-    loadElement.style.display = 'block';
-  } else {
-    console.error('Load Add To Cart element not found');
-  }
+  document.getElementById('loadAddToCart').style.display = 'block';
 }
 
 function loadingCart() {
   loadAddToCart();
 
   setTimeout(() => {
-    const loadElement = document.getElementById('loadAddToCart');
-    if (loadElement) {
-      loadElement.style.display = 'none';
-    }
-  }, 500);
+    document.getElementById('loadAddToCart').style.display = 'none';
+  }, 500)
 }
