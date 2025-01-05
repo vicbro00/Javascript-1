@@ -30,7 +30,6 @@ function finishClick() {
 }
 
 //Loading when adding to cart
-
 function loadAddToCart() {
   document.getElementById('loadAddToCart').style.display = 'block';
 }
