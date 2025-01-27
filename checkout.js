@@ -55,8 +55,6 @@ function decreaseUnits(index) {
 
 loadCheckoutCart();
 
-
-//Remove items from cart
 function removeItem(index) {
   const savedCart = localStorage.getItem('data');
   const cart = savedCart ? JSON.parse(savedCart) : [];
