@@ -3,6 +3,7 @@ function increaseUnits() {
 function decreaseUnits() {
 }
 
+//Loading checkout cart
 function loadCheckoutCart() {
   const savedCart = localStorage.getItem('data');
   const cart = savedCart ? JSON.parse(savedCart) : [];
@@ -54,6 +55,8 @@ function decreaseUnits(index) {
 
 loadCheckoutCart();
 
+
+//Remove items from cart
 function removeItem(index) {
   const savedCart = localStorage.getItem('data');
   const cart = savedCart ? JSON.parse(savedCart) : [];
