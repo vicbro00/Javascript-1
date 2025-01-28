@@ -1,56 +1,44 @@
-//API
 const apiKey = '806d9b72-8fc9-432c-a274-d54bdecb9d1a';
 const apiURL = 'https://v2.api.noroff.dev/rainy-days';
-
 const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljQiIsImVtYWlsIjoidmljYnJvMDI0NThAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzgwMTEwNzV9.Ke81gamCJK8NSBi-dNBiMOQSPUvGjdt_Sis7_vD2TZg';
-
 
 const options = {
   headers: {
     'Authorization': `Bearer ${accessToken}`,
-    'X-Noroff-API-Key': `806d9b72-8fc9-432c-a274-d54bdecb9d1a`
+    'X-Noroff-API-Key': apiKey
   }
 };
 
-(async () => {
-  try {
-    const response = await fetch(`${apiURL}`, options);
-    
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    console.log('API Response:', data);
-  } catch (error) {
-    console.error('Error fetching API data:', error);
-  }
-})();
+const fetchDataWithTimeout = (url, options, timeout = 5000) => 
+  Promise.race([
+    fetch(url, options),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
+  ]);
 
 async function fetchProducts() {
   try {
-    const response = await fetch(apiURL, options);
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+    showLoader();
+    const response = await fetchDataWithTimeout(apiURL, options);
+
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
     const data = await response.json();
-    console.log('API Response:', data);
-    if (Array.isArray(data.data)) {
-      displayProducts(data.data);
-    } else {
-      console.error('Data is not in the expected format:', data);
-    }
+    if (!Array.isArray(data.data)) throw new Error('Data is not in the expected format');
+
     return data.data;
   } catch (error) {
     console.error('Error fetching API data:', error);
+    alert('Failed to fetch products. Please try again later.');
+  } finally {
+    hideLoader();
   }
 }
 
 function displayProducts(products) {
   const container = document.getElementById('cardsContainer');
-  container.innerHTML = '';
+  if (!container) return console.error('Container not found');
 
+  container.innerHTML = '';
   products.forEach(product => {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
@@ -64,46 +52,60 @@ function displayProducts(products) {
     container.appendChild(productCard);
   });
 
-  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-  addToCartButtons.forEach(button => {
+  setupAddToCartButtons(products);
+}
+
+function setupAddToCartButtons(products) {
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', (event) => {
       const productId = event.target.getAttribute('data-id');
       const product = products.find(prod => prod.id === productId);
-      if (product) {
-        addToCart(product);
-      }
+      if (product) addToCart(product);
     });
   });
 }
 
 function filterProducts(products, criteria) {
-  if (criteria === 'all') {
-    return products;
-  }
-  
-  return products.filter(product => {
-    if (criteria === 'onSale') {
-      return product.onSale;
-    }
-    return product.gender.toLowerCase() === criteria.toLowerCase() || product.tags.includes(criteria.toLowerCase());
-  });
+  if (criteria === 'all') return products;
+  return products.filter(product => 
+    criteria === 'onSale' ? product.onSale : product.gender.toLowerCase() === criteria.toLowerCase() || product.tags.includes(criteria.toLowerCase())
+  );
 }
 
-function setupFilterButtons(products) {
-  const buttons = document.querySelectorAll('.filter-btn');
-  buttons.forEach(button => {
-    button.addEventListener('click', (event) => {
+async function setupFilterButtons(products) {
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', async (event) => {
       const criteria = event.target.getAttribute('data-name');
-      buttons.forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
-      
+
+      showLoader();
       const filteredProducts = filterProducts(products, criteria);
       displayProducts(filteredProducts);
+      hideLoader();
     });
   });
 }
 
 (async () => {
   const products = await fetchProducts();
-  setupFilterButtons(products);
+  if (products) {
+    displayProducts(products);
+    setupFilterButtons(products);
+  }
 })();
+
+function showLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.style.display = 'block';
+}
+
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.style.display = 'none';
+}
+
+function updateCartLocalStorage() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('totalPrice', totalPrice.toFixed(2));
+}

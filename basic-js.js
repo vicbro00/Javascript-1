@@ -18,3 +18,8 @@ function showPage() {
     console.warn('Loading element not found.');
   }
 }
+
+function toggleMenu() {
+  const offScreenMenu = document.getElementById('offScreen');
+  offScreenMenu.classList.toggle('open');
+}

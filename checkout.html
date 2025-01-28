@@ -80,16 +80,14 @@
       </section>
       <div class="bar"></div>
       <h2>Review your order</h2>
-      <div class="order-details">
-        <h3>1. Your order</h3>
-        <h3 class="hide-mobile">2. Personal Details</h3>
-      </div>
+      <h3>1. Your order</h3>
+      <div id="checkoutContainer"></div>
+      <h3 class="hide-mobile">2. Personal Details</h3>
       <div class="top">
         <div class="product">
           <div class="layout">
             <div id="checkoutCart"></div>
           </div>
-          <p id="checkoutTotal">Total: £0.00</p>
         </div>
       <h3 class="hide-desktop">2. Personal Details</h3>
       <div class="forms">
@@ -178,7 +176,8 @@
       </div>
       </div>
       </div>
-      <a onclick="completeOrder()" href="checkout-success.html" id="completeOrderButton" class="button">Complete order</a>
+      <p id="checkoutTotal">Total: £0.00</p>
+      <a onclick="completeOrder()" id="completeOrderButton" class="button">Complete order</a>
     </main>
 
     <div class="border"></div>

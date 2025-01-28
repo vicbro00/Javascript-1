@@ -14,11 +14,15 @@ header {
 .off-screen {
   background-color: rgb(10, 54, 65);
   max-width: 200px;
-  position: absolute;
-  display: none;
+  position: fixed;
   margin: auto;
   padding: 1em;
-  top: 10%;
+  top: 15%;
+  left: -100%;
+}
+
+.off-screen.open {
+  left: 0;
 }
 
 .menu {
@@ -131,7 +135,6 @@ nav {
   background-color: rgba(0, 0, 0, 0.226);
   margin: 2em;
 }
-
 
 .cart-content h2,
 .cart-content h3 {
