@@ -148,18 +148,6 @@ input[type=checkbox] {
   background-color: rgb(10, 54, 65, 10%);
 }
 
-.cart-item img {
-  max-width: 10em;
-}
-
-.cart-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.226);
-  margin: 2em;
-}
-
 /* Media screens for desktop */
 @media (min-width: 1280px) {
   .hide-desktop {
@@ -231,18 +219,6 @@ input[type=checkbox] {
 
   .methods {
     display: flex;
-  }
-
-  .cartItem {
-    flex-direction: column;
-  }
-
-  .cartItem img {
-    margin-top: 2em;
-  }
-
-  .cartItem button {
-    margin-bottom: 2em;
   }
 
   .checkoutContainer {
