@@ -5,12 +5,10 @@
     <meta name="description" content="Rainy Days Product Page">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Rainy Days | Product Page</title>
+    <title>Game Hub | Product Page</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/Pictures/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/Pictures/favicon-32x32.png">
-	  <link rel="icon" type="image/png" sizes="192x192" href="/Pictures/android-chrome-192x192.png">
-	  <link rel="icon" type="image/png" sizes="16x16" href="/Pictures/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/Pictures/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/Pictures/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Pictures/favicon-16x16.png">
     <link rel="stylesheet" href="/css/basic-styling.css">
     <link rel="stylesheet" href="/css/product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +22,9 @@
     <script src="/script/products.js" defer></script>
   </head>
 
-  <body id="page-product1" onload="loadScreen()">
-    <div id="loader"></div>
+  <body id="page-index">
+    <div id="pageTransitionLoader" class="loader"></div>
+    <div id="globalLoader" class="loader"></div>
     <header>
       <div>
         <div id="offScreen" class="off-screen">
@@ -51,7 +50,7 @@
               <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i>
               <p onclick="toggleCart()">Cart</p>
             </div>
-            <ul id="cartMenu">
+            <div id="cartMenu">
               <div class="cart-content">
                 <div class="products">
                   <div class="container">
@@ -63,11 +62,12 @@
                 <h3>Total</h3>
                 <h2 id="total">£0.00</h2>
               </div>
-              <a href="/checkout.html"><button id="checkoutBtn">Continue to checkout</button></a>
-            </ul>
+              <a href="/checkout/index.html"><button id="checkoutBtn">Continue to checkout</button></a>
+            </div>
           </div>
-        </div>
-      </header>
+        </nav>
+      </div>
+    </header>
 
     <main>
         <div id="productDetails" class="product-details"></div>
@@ -81,20 +81,14 @@
     <div class="border"></div>
     <footer>
       <div class="footer-left">
-        <a href="index.html">
-          <img src="/Pictures/Logo.png" alt="Rainy Days logo">
+        <a href="/index.html">
+          <img src="/Pictures/android-chrome-192x192.png" alt="Rainy Days logo">
         </a>
         <div class="copyright">Copyright &copy;</div>
         <div>
-          <a href="/https://www.facebook.com/" aria-label="Go to Facebook Page">
-            <i id="facebook" class="fa-brands fa-square-facebook"></i>
-          </a>
-          <a href="/https://www.instagram.com/" aria-label="Go to Instagram Page">
-            <i id="instagram" class="fa-brands fa-square-instagram"></i>
-          </a>
-          <a href="/https://www.youtube.com/" aria-label="Go to Youtube Page">
-            <i id="youtube" class="fa-brands fa-youtube"></i>
-          </a>
+          <i id="facebook" class="fa-brands fa-square-facebook"></i>
+          <i id="instagram" class="fa-brands fa-square-instagram"></i>
+          <i id="youtube" class="fa-brands fa-youtube"></i>
         </div>
       </div>
       <div class="footer-right">

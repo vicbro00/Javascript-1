@@ -1,103 +1,30 @@
 main h3 {
-  color: rgb(10, 54, 65);
-  margin: 2em 0;
+  color: rgb(23, 8, 114);
   text-align: right;
 }
 
-main h3:hover {
-  color: rgba(10, 54, 65, 0.8);
+.product-details,
+main h3 {
+  margin: 1em;
+}
+
+.product-details {
+  display: flex;
+  justify-content: center;
 }
 
 .product-detail-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .product-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+}
+
+.product-image {
   max-width: 50%;
-}
-
-button {
-  font-family: "Open Sans";
-  background-color: rgb(10, 54, 65);
-  border-style: solid;
-  border-color: black;
-  cursor: pointer;
-  color: white;
-  padding: 1em 2em;
-  margin: 1em;
-}
-
-/* Media screens for desktop */
-@media (min-width: 1280px) {
-  a.button {
-    font-size: 1em;
-  }
-
-  main img {
-    max-width: 20em;
-    margin: auto;
-  }
-
-  h1 {
-    text-align: center;
-    font-weight: 600;
-  }
-
-  .main-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: rgb(10, 54, 65, 10%);
-    padding: 2em 0;
-  }
-}
-
-/* Media screens for mobile */
-@media (min-width: 375px) and (max-width: 1280px) {
-  main h1 {
-    font-size: 20px;
-  }
-
-  main h1,
-  main h2,
-  main p {
-    text-align: center;
-  }
-
-  main img {
-    display: block;
-    margin: 1em auto;
-    max-width: 100%;
-  }
-
-  main h3 {
-    text-align: center;
-  }
-}
-
-/* Media screens for tablet */
-@media (min-width: 767px) and (max-width: 1280px) {
-  main h1 {
-    font-size: 20px;
-  }
-
-  main h1,
-  main h2,
-  main p {
-    text-align: center;
-  }
-
-  main img {
-    display: block;
-    margin: 1em auto;
-    max-width: 100%;
-  }
-
-  main h3 {
-    text-align: center;
-  }
 }

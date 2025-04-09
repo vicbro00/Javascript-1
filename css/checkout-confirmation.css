@@ -3,36 +3,19 @@ main {
   text-align: center;
 }
 
-main img {
-  width: 100%;
-  max-height: 10em;
-  object-fit: contain;
+main i {
+  color: rgb(23, 8, 114);
+  font-size: 10em;
 }
 
-h1 {
-  text-align: center;
-  color: black;
-}
-
-p {
-  text-align: center;
-}
-
-a.button {
+.button {
   font-family: "Open Sans";
-  background-color: rgb(10, 54, 65);
-  border-style: solid;
-  border-color: black;
+  background-color: rgb(23, 8, 114);
+  border: solid black;
   cursor: pointer;
   color: white;
   padding: 1em 2em;
+  text-align: center;
   display: inline-block;
-  margin: 4em auto;
-}
-
-/* Media screens for tablet */
-@media (min-width: 767px) and (max-width: 1280px) {
-  a.button {
-    font-size: 1em;
-  }
+  margin: 1em 0;
 }

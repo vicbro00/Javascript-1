@@ -1,72 +1,47 @@
+let currentProduct = null;
+
 // Get product ID from URL
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-console.log('Product ID from URL:', productId);
-
-if (!productId) {
-  console.error('No product ID found in URL');
-  // Redirect to products page or show error message
-  window.location.href = '/products.html';
-} else {
-  fetchProductDetails(productId);
+function getProductIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('id');
 }
 
-// Function to fetch product details
-async function fetchProductDetails(productId) {
-  // Validate the product ID format first
-  if (!isValidId(productId)) {
-    throw new Error('Invalid product ID format');
-  }
-
-  const apiUrl = `https://v2.api.noroff.dev/rainy-days/${productId}`;
-  console.log('Attempting to fetch from:', apiUrl);
-
-  try {
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      // More specific error handling
-      if (response.status === 404) {
-        throw new Error(`Product with ID ${productId} not found`);
-      }
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const responseData = await response.json();
-    console.log('API Response:', responseData); // Log the entire response
-
-    // Validate the response structure
-    if (!responseData.data) {
-      throw new Error('Unexpected API response format');
-    }
-
-    displayProductDetails(responseData.data);
-  } catch (error) {
-    console.error("Error fetching product details:", error);
-    // Re-throw with more context
-    throw new Error(`Failed to fetch product: ${error.message}`);
-  }
-}
-
-// Helper function to validate UUID format
+// Validate UUID format
 function isValidId(id) {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   return uuidRegex.test(id);
 }
 
-// Function to display product details
-function displayProductDetails(product) {
-  console.log('Displaying product:', product); // Add this log
-
-  const container = document.getElementById('productDetails');
-  if (!container) {
-    console.error('Product details container not found');
-    return;
+// Fetch product details from API
+async function fetchProductDetails(productId) {
+  if (!isValidId(productId)) {
+    throw new Error('Invalid product ID format');
   }
 
-  // Check if required product properties exist
+  const apiUrl = `https://v2.api.noroff.dev/gamehub/${productId}`;
+
+  const response = await fetch(apiUrl);
+  if (!response.ok) {
+    throw new Error(response.status === 404
+      ? `Product with ID ${productId} not found`
+      : `HTTP error! Status: ${response.status}`);
+  }
+
+  const responseData = await response.json();
+  if (!responseData.data) {
+    throw new Error('Unexpected API response format');
+  }
+
+  return responseData.data;
+}
+
+// Display product details on page
+function displayProductDetails(product) {
+  currentProduct = product;
+  const container = document.getElementById('productDetails');
+  if (!container) return;
+
   if (!product || !product.title || !product.image) {
-    console.error('Invalid product data:', product);
     container.innerHTML = '<p>Invalid product data</p>';
     return;
   }
@@ -85,4 +60,44 @@ function displayProductDetails(product) {
       </div>
     </div>
   `;
+
+  // Initialize add to cart button
+  const addToCartButton = container.querySelector('.add-to-cart-btn');
+  if (addToCartButton) {
+    addToCartButton.addEventListener('click', () => {
+      if (currentProduct) {
+        withGlobalLoader(() => new Promise(resolve => {
+          addToCart(currentProduct);
+          setTimeout(resolve, 1000);
+        }));
+      }
+    });
+  }
+}
+
+// Initialize product page
+async function initializeProductPage() {
+  const productId = getProductIdFromUrl();
+  if (!productId) {
+    window.location.href = '/products.html';
+    return;
+  }
+
+  try {
+    const product = await fetchProductDetails(productId);
+    displayProductDetails(product);
+  } catch (error) {
+    console.error('Error loading product:', error);
+    document.getElementById('productDetails').innerHTML = `
+      <div class="error-message">
+        <p>Failed to load product details.</p>
+        <a href="/products.html" class="back-link">Return to products</a>
+      </div>
+    `;
+  }
+}
+
+// Initialize product page if on product detail page
+if (document.getElementById('productDetails')) {
+  document.addEventListener('DOMContentLoaded', initializeProductPage);
 }

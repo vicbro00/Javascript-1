@@ -1,25 +1,22 @@
+//index.js
 const fetchDataWithTimeout = (url, options, timeout = 5000) => 
   Promise.race([
     fetch(url, options),
     new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
   ]);
 
+// Add the missing fetchProducts function
 async function fetchProducts() {
   try {
-    showLoader();
-    const response = await fetchDataWithTimeout(apiURL, options);
-
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
+    const response = await fetchDataWithTimeout('https://v2.api.noroff.dev/gamehub');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
     const data = await response.json();
-    if (!Array.isArray(data.data)) throw new Error('Data is not in the expected format');
-
     return data.data;
   } catch (error) {
-    console.error('Error fetching API data:', error);
-    alert('Failed to fetch products. Please try again later.');
-  } finally {
-    hideLoader();
+    console.error('Error fetching products:', error);
+    return null;
   }
 }
 
@@ -32,18 +29,15 @@ function displayProducts(products) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
     
-    // Create product link for image and title only
     const productLink = document.createElement('a');
     productLink.href = `product/index.html?id=${product.id}`;
     productLink.classList.add('product-link');
     
-    // Only image and title inside the link
     productLink.innerHTML = `
       <img src="${product.image.url}" alt="${product.title}">
       <h4>${product.title}</h4>
     `;
     
-    // Create elements for price and button outside the link
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
     productInfo.innerHTML = `
@@ -51,7 +45,6 @@ function displayProducts(products) {
       <button class="add-to-cart-btn" data-id="${product.id}">Add to cart</button>
     `;
     
-    // Append all elements to the card
     productCard.appendChild(productLink);
     productCard.appendChild(productInfo);
     container.appendChild(productCard);
@@ -60,59 +53,57 @@ function displayProducts(products) {
   setupAddToCartButtons(products);
 }
 
-
-
 function setupAddToCartButtons(products) {
   document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', (event) => {
       const productId = event.target.getAttribute('data-id');
       const product = products.find(prod => prod.id === productId);
-      if (product) addToCart(product);
+
+      if (product) {
+        withGlobalLoader(() => new Promise(resolve => {
+          addToCart(product);
+          setTimeout(resolve, 1000);
+        }));
+      }
     });
   });
 }
 
 function filterProducts(products, criteria) {
   if (criteria === 'all') return products;
-  return products.filter(product => 
-    criteria === 'onSale' ? product.onSale : product.gender.toLowerCase() === criteria.toLowerCase() || product.tags.includes(criteria.toLowerCase())
-  );
+  
+  return products.filter(product => {
+    if (criteria === 'onSale') {
+      return product.onSale === true;
+    }
+
+    const genreMatch = product.genre?.toLowerCase() === criteria.toLowerCase();
+    const tagsMatch = product.tags?.some(tag => tag.toLowerCase() === criteria.toLowerCase());
+
+    return genreMatch || tagsMatch;
+  });
 }
 
 async function setupFilterButtons(products) {
   document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', async (event) => {
+    button.addEventListener('click', (event) => {
       const criteria = event.target.getAttribute('data-name');
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
 
-      showLoader();
-      const filteredProducts = filterProducts(products, criteria);
-      displayProducts(filteredProducts);
-      hideLoader();
+      withGlobalLoader(() => new Promise(resolve => {
+        const filteredProducts = filterProducts(products, criteria);
+        displayProducts(filteredProducts);
+        setTimeout(resolve, 1000);
+      }));      
     });
   });
 }
 
-(async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const products = await fetchProducts();
   if (products) {
     displayProducts(products);
     setupFilterButtons(products);
   }
-})();
-
-function showLoader() {
-  const loader = document.getElementById('loader');
-  if (loader) loader.style.display = 'block';
-}
-
-function hideLoader() {
-  const loader = document.getElementById('loader');
-  if (loader) loader.style.display = 'none';
-}
-
-function updateCartLocalStorage() {
-  localStorage.setItem('cart', JSON.stringify(cart));
-  localStorage.setItem('totalPrice', totalPrice.toFixed(2));
-}
+});
