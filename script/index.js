@@ -1,14 +1,3 @@
-const apiKey = '806d9b72-8fc9-432c-a274-d54bdecb9d1a';
-const apiURL = 'https://v2.api.noroff.dev/rainy-days';
-const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljQiIsImVtYWlsIjoidmljYnJvMDI0NThAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzgwMTEwNzV9.Ke81gamCJK8NSBi-dNBiMOQSPUvGjdt_Sis7_vD2TZg';
-
-const options = {
-  headers: {
-    'Authorization': `Bearer ${accessToken}`,
-    'X-Noroff-API-Key': apiKey
-  }
-};
-
 const fetchDataWithTimeout = (url, options, timeout = 5000) => 
   Promise.race([
     fetch(url, options),
@@ -42,18 +31,36 @@ function displayProducts(products) {
   products.forEach(product => {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
-    productCard.innerHTML = `
+    
+    // Create product link for image and title only
+    const productLink = document.createElement('a');
+    productLink.href = `product/index.html?id=${product.id}`;
+    productLink.classList.add('product-link');
+    
+    // Only image and title inside the link
+    productLink.innerHTML = `
       <img src="${product.image.url}" alt="${product.title}">
       <h4>${product.title}</h4>
-      <p>${product.description}</p>
-      <p>Price: $${product.discountedPrice}</p>
+    `;
+    
+    // Create elements for price and button outside the link
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+    productInfo.innerHTML = `
+      <p class="price">$${product.discountedPrice}</p>
       <button class="add-to-cart-btn" data-id="${product.id}">Add to cart</button>
     `;
+    
+    // Append all elements to the card
+    productCard.appendChild(productLink);
+    productCard.appendChild(productInfo);
     container.appendChild(productCard);
   });
 
   setupAddToCartButtons(products);
 }
+
+
 
 function setupAddToCartButtons(products) {
   document.querySelectorAll('.add-to-cart-btn').forEach(button => {
